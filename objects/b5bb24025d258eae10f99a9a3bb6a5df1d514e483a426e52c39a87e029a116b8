@@ -1,0 +1,60 @@
+-- Extension local del screenpack. No reemplaza scripts del motor.
+modifyGameOption('Config.FirstRun', false)
+modifyGameOption('Options.Match.Wins', 2)
+local splashShown = false
+hook.add('main.menu.loop', 'combate_inicio', function()
+ if splashShown then return end
+ splashShown = true
+ print('[COMBATE] Inicio listo')
+ -- El lanzador ya muestra la portada: entrar directo a elegir modo.
+ resetKey(); esc(false)
+ print('[COMBATE] Menu listo')
+end)
+local oldBot = main.t_itemname.freebattle
+main.t_itemname.freebattle = function(t, item)
+ local result = oldBot(t, item)
+ main.cpuSide[2] = true
+ main.teamMenu[1] = {single = true}; main.teamMenu[2] = {single = true}
+ print('[COMBATE] Modo jugador vs bot; CPU2=true')
+ return result
+end
+local oldVersus = main.t_itemname.versus
+main.t_itemname.versus = function(t, item)
+ local result = oldVersus(t, item)
+ main.teamMenu[1] = {single = true}; main.teamMenu[2] = {single = true}
+ print('[COMBATE] Modo jugador vs jugador; CPU2='..tostring(main.cpuSide[2]))
+ return result
+end
+local oldMakeRoster = start.f_makeRoster
+start.f_makeRoster = function(ret)
+ if gameMode() ~= 'arcade' then return oldMakeRoster(ret) end
+ local chosen = start.p[1].t_selected[1].ref
+ local pool, seen = {}, {}
+ for _, ch in ipairs(main.t_selChars) do
+  local ref = ch.char_ref
+  if ch.playable and ref ~= nil and ref >= 0 and ref ~= chosen and not seen[ref] then
+   pool[#pool+1] = ref; seen[ref] = true
+  end
+ end
+ main.f_tableShuffle(pool)
+ if #pool < 10 then error('Torre: se necesitan 11 personajes instalados para diez rivales distintos.') end
+ local roster, log = {}, {}
+ for i=1,10 do roster[i] = {pool[i]}; log[i] = tostring(pool[i]) end
+ print('[COMBATE_TORRE] elegido='..chosen..'; rivales='..table.concat(log,','))
+ return roster
+end
+
+assert(loadFile('data/combate/torre.lua'))()
+
+local originalTeamVersus = main.t_itemname.teamversus
+main.t_itemname.teamversus = function(t, item)
+ local result = originalTeamVersus(t, item)
+ main.cpuSide[1] = false; main.cpuSide[2] = false
+ main.teamMenu[1] = {tag = true}; main.teamMenu[2] = {tag = true}
+ main.numTag = {2,2}
+ main.orderSelect[1] = false; main.orderSelect[2] = false
+ textImgSetText(motif.select_info.title.TextSpriteData, '2 VS 2 - ELIGE DOS LUCHADORES')
+ return result
+end
+
+assert(loadFile('data/combate/dificultad.lua'))()

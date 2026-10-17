@@ -1,0 +1,33 @@
+-- COMBATE1.1.1: three native difficulty presets, persisted by Guardar y volver.
+local levels = {2,5,8}
+local labels = {'FACIL','MEDIO','DIFICIL'}
+local function preset()
+ local n = gameOption('Options.Difficulty')
+ if n <= 3 then return 1 elseif n <= 6 then return 2 else return 3 end
+end
+options.t_vardisplay.difficulty = function() return labels[preset()] end
+options.t_itemname.difficulty = function(t, item, cursorPosY, moveTxt)
+ local i = preset()
+ if getInput(-1, motif.option_info.menu.add.key) then i = math.min(3,i+1)
+ elseif getInput(-1, motif.option_info.menu.subtract.key) then i = math.max(1,i-1)
+ else return true end
+ modifyGameOption('Options.Difficulty',levels[i])
+ t.items[item].vardisplay = labels[i]
+ options.modified = true
+ sndPlay(motif.Snd,motif.option_info.cursor.move.snd[1],motif.option_info.cursor.move.snd[2])
+ return true
+end
+-- Keep the selected preset in arcade as well; ramping would silently change it.
+local originalDifficulty = start.f_difficulty
+start.f_difficulty = function(player, offset)
+ local value = levels[preset()]
+ print('[COMBATE_IA] dificultad='..labels[preset()]..'; nivel='..value)
+ return value
+end
+local function refreshDifficultyLabel()
+ for _,v in ipairs(options.t_vardisplayPointers) do
+  if v.itemname == 'difficulty' then v.vardisplay = labels[preset()] end
+ end
+end
+refreshDifficultyLabel()
+hook.add('options.menu.loop','combate_difficulty_label',refreshDifficultyLabel)
