@@ -2,9 +2,10 @@
 
 Juego de pelea 2D para PC creado por Deyner Quiroz con IKEMEN GO, ambientado en Jinotega, Nicaragua.
 
-## Versión 1.1.1
+## Versión 1.1.2
 
 - Dificultad **Fácil, Medio y Difícil**, elegible en **Configuración → Dificultad** con izquierda/derecha. Elegí **Guardar y volver** para conservarla. También se respeta en la torre.
+- Corregido el movimiento de la CPU: avance controlado por la IA, sin saltos automáticos de retroceso ni bloqueo de la caminata. Se mantiene cerca para intercambiar golpes y solo retrocede brevemente tras un intercambio en la esquina.
 - La CPU regula pausas, defensa y combinaciones según la dificultad. Busca espacio para volver al centro y salir de las esquinas; el jugador conserva libertad de movimiento. La vida y el daño no aumentan con la dificultad.
 - 17 luchadores, incluyendo Elian «Wanheda» y Lenn «El Tripas».
 - 12 escenarios de Jinotega, incluyendo Avioneta, La Pelota, Calle La Salle, La Catedral, Lago de Apanás, Peñas Blancas, Cascada La Bujona e I.N.B.Z.
@@ -13,7 +14,7 @@ Juego de pelea 2D para PC creado por Deyner Quiroz con IKEMEN GO, ambientado en 
 
 ## Cómo actualizar
 
-Cerrá el juego, abrí **COMBATE.exe** y elegí **Buscar actualizaciones**. Aceptá la versión **1.1.1** y, al terminar, elegí **Jugar**. Necesitás la instalación completa y el canal de actualizaciones configurado. Se puede actualizar directamente desde versiones anteriores.
+Cerrá el juego, abrí **COMBATE.exe** y elegí **Buscar actualizaciones**. Aceptá la versión **1.1.2** y, al terminar, elegí **Jugar**. Necesitás la instalación completa y el canal de actualizaciones configurado. Se puede actualizar directamente desde versiones anteriores.
 
 El manifiesto latest.json está firmado. El lanzador comprueba firma y hashes, respalda los archivos que sustituye y conserva save/config.ini, incluyendo controles y audio.
 
