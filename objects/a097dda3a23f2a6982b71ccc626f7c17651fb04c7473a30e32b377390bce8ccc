@@ -1,0 +1,25 @@
+; Elian - Wanheda, playable prototype v0.1
+[Info]
+name = "Wanheda"
+displayname = "Elian - Wanheda"
+versiondate = 10,15,2026
+mugenversion = 1.1
+author = "Deyner Quiroz / Codex"
+pal.defaults = 1
+localcoord = 640,480
+[Files]
+cmd = wanheda.cmd
+cns = wanheda.cns
+st = wanheda.cns
+stcommon = common1.cns
+sprite = wanheda.sff
+anim = wanheda.air
+sound = wanheda.snd
+movelist = movelist.dat
+[Palette Keymap]
+x = 1
+y = 1
+z = 1
+a = 1
+b = 1
+c = 1

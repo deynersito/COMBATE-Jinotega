@@ -1,0 +1,25 @@
+; Lenn - El Tripas, playable prototype v0.1
+[Info]
+name = "El Tripas"
+displayname = "Lenn - El Tripas"
+versiondate = 10,16,2026
+mugenversion = 1.1
+author = "Deyner Quiroz / Codex"
+pal.defaults = 1
+localcoord = 640,480
+[Files]
+cmd = lenn.cmd
+cns = lenn.cns
+st = lenn.cns
+stcommon = common1.cns
+sprite = lenn.sff
+anim = lenn.air
+sound = lenn.snd
+movelist = movelist.dat
+[Palette Keymap]
+x = 1
+y = 1
+z = 1
+a = 1
+b = 1
+c = 1

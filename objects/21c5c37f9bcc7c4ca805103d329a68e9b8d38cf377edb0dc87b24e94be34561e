@@ -1,0 +1,323 @@
+[Remap]
+x=x
+y=y
+z=z
+a=a
+b=b
+c=c
+s=s
+[Defaults]
+command.time = 18
+command.buffer.time = 3
+
+[Command]
+name = "rafaga"
+command = ~D, DF, F, x
+time = 18
+buffer.time = 3
+
+[Command]
+name = "superrafaga"
+command = ~D, DF, F, y
+time = 18
+buffer.time = 3
+
+[Command]
+name = "FF"
+command = F, F
+time = 18
+buffer.time = 3
+
+[Command]
+name = "BB"
+command = B, B
+time = 18
+buffer.time = 3
+
+[Command]
+name = "x"
+command = x
+time = 18
+buffer.time = 3
+
+[Command]
+name = "y"
+command = y
+time = 18
+buffer.time = 3
+
+[Command]
+name = "z"
+command = z
+time = 18
+buffer.time = 3
+
+[Command]
+name = "a"
+command = a
+time = 18
+buffer.time = 3
+
+[Command]
+name = "b"
+command = b
+time = 18
+buffer.time = 3
+
+[Command]
+name = "c"
+command = c
+time = 18
+buffer.time = 3
+
+[Command]
+name = "s"
+command = s
+time = 18
+buffer.time = 3
+
+[Command]
+name = "holdfwd"
+command = /$F
+time = 18
+buffer.time = 1
+
+[Command]
+name = "holdback"
+command = /$B
+time = 18
+buffer.time = 1
+
+[Command]
+name = "holdup"
+command = /$U
+time = 18
+buffer.time = 1
+
+[Command]
+name = "holddown"
+command = /$D
+time = 18
+buffer.time = 1
+
+[Statedef -1]
+
+[State -1, SuperRafaga]
+type = ChangeState
+triggerall = Power >= 3000
+value = 3000
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = NumHelper(1200) + NumHelper(3200) = 0
+triggerall = command = "superrafaga" || command = "c"
+trigger1 = 1
+
+[State -1, Rafaga]
+type = ChangeState
+triggerall = Power >= 1000
+value = 1000
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = NumHelper(1200) + NumHelper(3200) = 0
+triggerall = command = "rafaga" || command = "z"
+trigger1 = 1
+
+[State -1, Run]
+type = ChangeState
+value = 100
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "FF"
+trigger1 = 1
+
+[State -1, BackHop]
+type = ChangeState
+value = 105
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "BB"
+trigger1 = 1
+
+[State -1, Taunt]
+type = ChangeState
+value = 195
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "s"
+trigger1 = 1
+
+[State -1, Attack600x]
+type = ChangeState
+value = 600
+triggerall = AILevel = 0
+triggerall = StateType = A
+triggerall = Ctrl
+triggerall = command = "x"
+trigger1 = 1
+
+[State -1, Attack630a]
+type = ChangeState
+value = 630
+triggerall = AILevel = 0
+triggerall = StateType = A
+triggerall = Ctrl
+triggerall = command = "a"
+trigger1 = 1
+
+[State -1, Attack400x]
+type = ChangeState
+value = 400
+triggerall = AILevel = 0
+triggerall = StateType = C
+triggerall = Ctrl
+triggerall = command = "x"
+trigger1 = 1
+
+[State -1, Attack400y]
+type = ChangeState
+value = 400
+triggerall = AILevel = 0
+triggerall = StateType = C
+triggerall = Ctrl
+triggerall = command = "y"
+trigger1 = 1
+
+[State -1, Attack430a]
+type = ChangeState
+value = 430
+triggerall = AILevel = 0
+triggerall = StateType = C
+triggerall = Ctrl
+triggerall = command = "a"
+trigger1 = 1
+
+[State -1, Attack430b]
+type = ChangeState
+value = 430
+triggerall = AILevel = 0
+triggerall = StateType = C
+triggerall = Ctrl
+triggerall = command = "b"
+trigger1 = 1
+
+[State -1, Attack200]
+type = ChangeState
+value = 200
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "x"
+trigger1 = 1
+
+[State -1, Attack210]
+type = ChangeState
+value = 210
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "y"
+trigger1 = 1
+
+[State -1, Attack230]
+type = ChangeState
+value = 230
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "a"
+trigger1 = 1
+
+[State -1, Attack240]
+type = ChangeState
+value = 240
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "b"
+trigger1 = 1
+
+[State -1, AI SuperRafaga]
+type = ChangeState
+triggerall = Power >= 3000
+value = 3000
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = NumHelper(1200) + NumHelper(3200) = 0
+triggerall = P2BodyDist X < 440
+triggerall = Random < 3 + AILevel
+trigger1 = 1
+
+[State -1, AI Rafaga]
+type = ChangeState
+triggerall = Power >= 1000
+value = 1000
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = NumHelper(1200) + NumHelper(3200) = 0
+triggerall = P2BodyDist X < 440
+triggerall = Random < 3 + AILevel
+trigger1 = 1
+
+[State -1, AI Jab]
+type = ChangeState
+value = 200
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = P2BodyDist X < 90
+triggerall = Random < 35 + AILevel * 7
+trigger1 = 1
+
+[State -1, AI Directo]
+type = ChangeState
+value = 210
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = P2BodyDist X < 110
+triggerall = Random < 15 + AILevel * 3
+trigger1 = 1
+
+[State -1, AI Guard]
+type = ChangeState
+value = 130
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = P2MoveType = A
+triggerall = P2BodyDist X < 200
+triggerall = Random < 15 + AILevel * 4
+trigger1 = 1
+
+[State -1, AI Approach]
+type = ChangeState
+value = 20
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = StateNo != 20
+triggerall = P2BodyDist X > 50
+triggerall = Random < 100
+trigger1 = 1
+
+[Statedef -2]
+[State -2, Stop]
+type = ChangeState
+triggerall = AILevel > 0
+triggerall = StateNo = 20
+trigger1 = P2BodyDist X <= 50
+value = 0
+ctrl = 1
