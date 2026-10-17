@@ -1,0 +1,614 @@
+[Begin Action 5]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,0, 0,0, 3
+0,1, 0,0, 3
+
+[Begin Action 6]
+Clsn2Default: 1
+Clsn2[0] = -48,-164,48,0
+0,25, 0,0, 4
+
+[Begin Action 10]
+Clsn2Default: 1
+Clsn2[0] = -48,-164,48,0
+0,25, 0,0, 4
+
+[Begin Action 11]
+Clsn2Default: 1
+Clsn2[0] = -48,-164,48,0
+0,25, 0,0, -1
+
+[Begin Action 12]
+Clsn2Default: 1
+Clsn2[0] = -48,-164,48,0
+0,25, 0,0, 3
+0,0, 0,0, 3
+
+[Begin Action 40]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,25, 0,0, 3
+
+[Begin Action 41]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,35, 0,0, -1
+
+[Begin Action 42]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,35, 0,0, -1
+
+[Begin Action 43]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,35, 0,0, -1
+
+[Begin Action 44]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,35, 0,0, -1
+
+[Begin Action 45]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,35, 0,0, -1
+
+[Begin Action 46]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,35, 0,0, -1
+
+[Begin Action 47]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,25, 0,0, 4
+0,0, 0,0, 3
+
+[Begin Action 105]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,35, 0,0, -1
+
+[Begin Action 170]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,27, 0,0, -1
+
+[Begin Action 180]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,34, 0,0, -1
+
+[Begin Action 181]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,34, 0,0, -1
+
+[Begin Action 190]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,0, 0,0, 24
+0,0, 0,0, 10
+
+[Begin Action 191]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,0, 0,0, 24
+0,0, 0,0, 10
+
+[Begin Action 192]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,0, 0,0, -1
+
+[Begin Action 195]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,34, 0,0, 28
+0,0, 0,0, 6
+
+[Begin Action 120]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,24, 0,0, 3
+
+[Begin Action 121]
+Clsn2Default: 1
+Clsn2[0] = -48,-164,48,0
+0,25, 0,0, 3
+
+[Begin Action 122]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,24, 0,0, 3
+
+[Begin Action 130]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,24, 0,0, -1
+
+[Begin Action 131]
+Clsn2Default: 1
+Clsn2[0] = -48,-164,48,0
+0,25, 0,0, -1
+
+[Begin Action 132]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,24, 0,0, -1
+
+[Begin Action 140]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,24, 0,0, 3
+0,0, 0,0, 3
+
+[Begin Action 141]
+Clsn2Default: 1
+Clsn2[0] = -48,-164,48,0
+0,25, 0,0, 3
+
+[Begin Action 142]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,24, 0,0, 3
+
+[Begin Action 150]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,24, 0,0, -1
+
+[Begin Action 151]
+Clsn2Default: 1
+Clsn2[0] = -48,-164,48,0
+0,25, 0,0, -1
+
+[Begin Action 152]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,24, 0,0, -1
+
+[Begin Action 5000]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5001]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5002]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5005]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5006]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5007]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5010]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,27, 0,0, 5
+
+[Begin Action 5011]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,27, 0,0, 5
+
+[Begin Action 5012]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,27, 0,0, 5
+
+[Begin Action 5015]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,27, 0,0, 5
+
+[Begin Action 5016]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,27, 0,0, 5
+
+[Begin Action 5017]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,27, 0,0, 5
+
+[Begin Action 5020]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5021]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5022]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5025]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5026]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5027]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5030]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5035]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5040]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5050]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5051]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5060]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5061]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5070]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5080]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5090]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,26, 0,0, 5
+
+[Begin Action 5100]
+Clsn2Default: 1
+Clsn2[0] = -135,-65,135,0
+0,30, 0,0, 3
+
+[Begin Action 5101]
+Clsn2Default: 1
+Clsn2[0] = -135,-65,135,0
+0,30, 0,0, 4
+
+[Begin Action 5110]
+Clsn2Default: 1
+Clsn2[0] = -135,-65,135,0
+0,30, 0,0, 1
+
+[Begin Action 5140]
+Clsn2Default: 1
+Clsn2[0] = -135,-65,135,0
+0,30, 0,0, -1
+
+[Begin Action 5150]
+Clsn2Default: 1
+Clsn2[0] = -135,-65,135,0
+0,30, 0,0, -1
+
+[Begin Action 5160]
+Clsn2Default: 1
+Clsn2[0] = -135,-65,135,0
+0,30, 0,0, -1
+
+[Begin Action 5170]
+Clsn2Default: 1
+Clsn2[0] = -135,-65,135,0
+0,30, 0,0, 3
+
+[Begin Action 5200]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,35, 0,0, 6
+0,0, 0,0, 6
+
+[Begin Action 5210]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,35, 0,0, 6
+0,0, 0,0, 6
+
+[Begin Action 5300]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,35, 0,0, 6
+0,0, 0,0, 6
+
+[Begin Action 5500]
+Clsn2Default: 1
+Clsn2[0] = -46,-240,46,0
+0,35, 0,0, 6
+0,0, 0,0, 6
+
+[Begin Action 5120]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,30,0,0,3
+0,31,0,0,6
+0,32,0,0,6
+0,33,0,0,5
+0,0,0,0,4
+
+[Begin Action 0]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,0,0,0,9
+0,1,0,0,9
+0,2,0,0,9
+0,3,0,0,9
+0,4,0,0,9
+0,5,0,0,9
+
+[Begin Action 20]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,6,0,0,6
+0,7,0,0,6
+0,8,0,0,6
+0,9,0,0,6
+0,10,0,0,6
+0,11,0,0,6
+
+[Begin Action 21]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,11,0,0,7
+0,10,0,0,7
+0,9,0,0,7
+0,8,0,0,7
+0,7,0,0,7
+0,6,0,0,7
+
+[Begin Action 100]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,6,0,0,4
+0,7,0,0,4
+0,8,0,0,4
+0,9,0,0,4
+0,10,0,0,4
+0,11,0,0,4
+
+[Begin Action 200]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,12,0,0,4
+Clsn1: 1
+Clsn1[0] = 15,-185,155,-100
+0,13,0,0,3
+0,0,0,0,5
+0,1,0,0,6
+
+[Begin Action 210]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,14,0,0,7
+Clsn1: 1
+Clsn1[0] = 15,-190,185,-90
+0,15,0,0,4
+0,14,0,0,5
+0,0,0,0,8
+
+[Begin Action 230]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,14,0,0,5
+Clsn1: 1
+Clsn1[0] = 10,-190,145,-85
+0,16,0,0,4
+0,12,0,0,5
+0,0,0,0,7
+
+[Begin Action 240]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,14,0,0,9
+Clsn1: 1
+Clsn1[0] = 10,-250,135,-105
+0,17,0,0,5
+0,14,0,0,8
+0,0,0,0,10
+
+[Begin Action 400]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,25,0,0,4
+Clsn1: 1
+Clsn1[0] = 10,-135,145,-45
+0,16,0,0,4
+0,25,0,0,9
+
+[Begin Action 430]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,25,0,0,7
+Clsn1: 1
+Clsn1[0] = 10,-190,135,-50
+0,17,0,0,5
+0,25,0,0,13
+
+[Begin Action 600]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,35,0,0,4
+Clsn1: 1
+Clsn1[0] = 10,-190,155,-90
+0,13,0,0,5
+0,35,0,0,8
+
+[Begin Action 630]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,35,0,0,6
+Clsn1: 1
+Clsn1[0] = 10,-250,140,-105
+0,17,0,0,6
+0,35,0,0,10
+
+[Begin Action 1000]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+Clsn2: 1
+Clsn2[0] = -48,-125,48,0
+0,18,0,0,5
+Clsn2: 1
+Clsn2[0] = -48,-125,48,0
+0,19,0,0,5
+Clsn2: 1
+Clsn2[0] = -48,-125,48,0
+0,20,0,0,4
+0,21,0,0,4
+Clsn1: 1
+Clsn1[0] = 10,-250,145,-90
+0,22,0,0,5
+0,23,0,0,12
+
+[Begin Action 3000]
+Clsn2Default: 1
+Clsn2[0] = -48,-125,48,0
+Clsn1: 1
+Clsn1[0] = -30,-225,140,-30
+0,18,0,0,5
+Clsn1: 1
+Clsn1[0] = -30,-225,140,-30
+0,19,0,0,5
+Clsn1: 1
+Clsn1[0] = -30,-225,140,-30
+0,20,0,0,4
+Clsn1: 1
+Clsn1[0] = -30,-225,140,-30
+0,18,0,0,4
+
+[Begin Action 3010]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,21,0,0,4
+Clsn1: 1
+Clsn1[0] = 10,-250,150,-90
+0,22,0,0,5
+0,21,0,0,6
+0,23,0,0,13
+
+[Begin Action 3020]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+0,21,0,0,4
+Clsn1: 1
+Clsn1[0] = 10,-250,150,-90
+0,22,0,0,5
+0,21,0,0,6
+0,23,0,0,13
+
+[Begin Action 11100]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+11000,0,0,0,-1
+
+[Begin Action 11101]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+11000,1,0,0,-1
+
+[Begin Action 11102]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+11000,2,0,0,-1
+
+[Begin Action 11103]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+11000,3,0,0,-1
+
+[Begin Action 11104]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+11000,4,0,0,-1
+
+[Begin Action 11105]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+11000,5,0,0,-1
+
+[Begin Action 11106]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+11000,6,0,0,-1
+
+[Begin Action 11107]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+11000,7,0,0,-1
+
+[Begin Action 9100]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+9100,0,0,0,-1
+
+[Begin Action 9200]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+9200,0,0,0,-1
+
+[Begin Action 9201]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+9200,1,0,0,-1
+
+[Begin Action 9202]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+9200,2,0,0,-1
+
+[Begin Action 9203]
+Clsn2Default: 1
+Clsn2[0] = -55,-225,55,0
+9200,3,0,0,-1

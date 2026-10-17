@@ -1,0 +1,69 @@
+-- Tower presentation: native storyboards; no core-engine replacements.
+local ids = {'el_sielvo','marlon','gerald','teno','ruben','levi','maria','arli','isamar','anneth','norwin','arleth','jarithon','adhara','katuy','wanheda','lenn','ector','hector','conejo','el_negro'}
+local index = {}
+for i,id in ipairs(ids) do index[id] = i-1 end
+local function sprite(ref)
+ local ch = start.f_getCharData(ref)
+ local path = ch.char:lower():gsub('\\','/')
+ local id = path:match('([^/]+)%.def$') or path:match('([^/]+)$')
+ assert(index[id] ~= nil, 'Torre: personaje sin retrato: '..path)
+ return index[id]
+end
+local function showTower(floor, champion)
+ local chosen = start.p[1].t_selected[1].ref
+ local lines = {'[Info]','localcoord = 1280,720','[SceneDef]','spr = data/combate/system.sff','key.skip =','key.cancel =','[Scene 0]','bg.name = Torre','fadein.time = 12','fadeout.time = 8','end.time = 36000'}
+ local n = 0
+ local function bg(num,x,y)
+  n=n+1
+  lines[#lines+1] = string.format('[Torre Elemento%d]\ntype = normal\nspriteno = 31000,%d\nstart = %d,%d\nlayerno = 0\nmask = 1',n,num,x-640,y)
+ end
+ bg(0,0,0)
+ for i=1,10 do
+  local y=96+(10-i)*49
+  bg(100+sprite(start.t_roster[i][1]),517,y+1)
+  if i<floor or champion then bg(2,514,y) end
+ end
+ bg(200+sprite(chosen),45,198)
+ if champion then
+  bg(30,190,70)
+ else
+  bg(1,508,92+(10-floor)*49)
+  bg(200+sprite(start.t_roster[floor][1]),925,198)
+  bg(10+floor,915,85)
+ end
+ for i,id in ipairs(ids) do bg(300+i-1,235+(i-1)*49,642) end
+ -- Small marker under the chosen fighter in the roster.
+ bg(300+sprite(chosen),196,642)
+ local path='data/combate/torre_actual.def'
+ local f=assert(io.open(path,'w'));f:write(table.concat(lines,'\n'));f:close()
+ resetKey();esc(false)
+ print('[COMBATE_TORRE] pantalla piso='..floor..'; campeon='..tostring(champion))
+ local abort=false
+ local ticks=0
+ assert(loadStoryboard(path), 'Torre: no se pudo cargar la pantalla')
+ while true do
+  if esc() or getKey('ESCAPE') then abort=true;break end
+  if ticks>20 and (getInput(-1, motif.select_info.done.key) or getKey()~='') then break end
+  if not runStoryboard() then break end
+  ticks=ticks+1
+  main.f_preloadTick(2);refresh()
+ end
+ -- Finish the native storyboard before returning to the fight renderer.
+ esc(true)
+ while runStoryboard() do main.f_preloadTick(2);refresh() end
+ resetKey();esc(false)
+ return not abort
+end
+local originalLaunch = launchFight
+launchFight = function(data)
+ if gameMode()~='arcade' or not start.t_roster or #start.t_roster~=10 then return originalLaunch(data) end
+ local floor=matchNo()
+ if floor<1 or floor>10 then return originalLaunch(data) end
+ if not showTower(floor,false) then setMatchNo(-1);return false end
+ local won=originalLaunch(data)
+ if won and matchNo()==11 and getWinnerTeam()==1 then
+  main.storyboard.ending=false
+  showTower(10,true)
+ end
+ return won
+end

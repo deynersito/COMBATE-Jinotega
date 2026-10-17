@@ -1,0 +1,452 @@
+[Remap]
+x=x
+y=y
+z=z
+a=a
+b=b
+c=c
+s=s
+[Defaults]
+command.time = 18
+command.buffer.time = 3
+
+[Command]
+name = "tierra"
+command = ~D, DF, F, x
+time = 18
+buffer.time = 3
+
+[Command]
+name = "falla"
+command = ~D, DF, F, y
+time = 18
+buffer.time = 3
+
+[Command]
+name = "FF"
+command = F, F
+time = 18
+buffer.time = 3
+
+[Command]
+name = "BB"
+command = B, B
+time = 18
+buffer.time = 3
+
+[Command]
+name = "x"
+command = x
+time = 18
+buffer.time = 3
+
+[Command]
+name = "y"
+command = y
+time = 18
+buffer.time = 3
+
+[Command]
+name = "z"
+command = z
+time = 18
+buffer.time = 3
+
+[Command]
+name = "a"
+command = a
+time = 18
+buffer.time = 3
+
+[Command]
+name = "b"
+command = b
+time = 18
+buffer.time = 3
+
+[Command]
+name = "c"
+command = c
+time = 18
+buffer.time = 3
+
+[Command]
+name = "s"
+command = s
+time = 18
+buffer.time = 3
+
+[Command]
+name = "holdfwd"
+command = /$F
+time = 18
+buffer.time = 1
+
+[Command]
+name = "holdback"
+command = /$B
+time = 18
+buffer.time = 1
+
+[Command]
+name = "holdup"
+command = /$U
+time = 18
+buffer.time = 1
+
+[Command]
+name = "holddown"
+command = /$D
+time = 18
+buffer.time = 1
+
+[Statedef -1]
+
+[State -1, Super]
+type = ChangeState
+value = 3000
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = Power >= 3000
+triggerall = command = "c" || command = "falla"
+trigger1 = 1
+
+[State -1, Special]
+type = ChangeState
+value = 1000
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = Power >= 1000
+triggerall = command = "z" || command = "tierra"
+trigger1 = 1
+
+[State -1, Attack600x]
+type = ChangeState
+value = 600
+triggerall = AILevel = 0
+triggerall = StateType = A
+triggerall = Ctrl
+triggerall = command = "x"
+trigger1 = 1
+
+[State -1, Attack630a]
+type = ChangeState
+value = 630
+triggerall = AILevel = 0
+triggerall = StateType = A
+triggerall = Ctrl
+triggerall = command = "a"
+trigger1 = 1
+
+[State -1, Attack400x]
+type = ChangeState
+value = 400
+triggerall = AILevel = 0
+triggerall = StateType = C
+triggerall = Ctrl
+triggerall = command = "x"
+trigger1 = 1
+
+[State -1, Attack400y]
+type = ChangeState
+value = 400
+triggerall = AILevel = 0
+triggerall = StateType = C
+triggerall = Ctrl
+triggerall = command = "y"
+trigger1 = 1
+
+[State -1, Attack430a]
+type = ChangeState
+value = 430
+triggerall = AILevel = 0
+triggerall = StateType = C
+triggerall = Ctrl
+triggerall = command = "a"
+trigger1 = 1
+
+[State -1, Attack430b]
+type = ChangeState
+value = 430
+triggerall = AILevel = 0
+triggerall = StateType = C
+triggerall = Ctrl
+triggerall = command = "b"
+trigger1 = 1
+
+[State -1, Attack200x]
+type = ChangeState
+value = 200
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "x"
+trigger1 = 1
+
+[State -1, Attack210y]
+type = ChangeState
+value = 210
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl || (StateNo = 200 && MoveHit && Time >= 6 && Time <= 20)
+triggerall = command = "y"
+trigger1 = 1
+
+[State -1, Attack230a]
+type = ChangeState
+value = 230
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl || (StateNo = 210 && MoveHit && Time >= 6 && Time <= 20)
+triggerall = command = "a"
+trigger1 = 1
+
+[State -1, Attack240b]
+type = ChangeState
+value = 240
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl || (StateNo = 230 && MoveHit && Time >= 6 && Time <= 20)
+triggerall = command = "b"
+trigger1 = 1
+
+[State -1, Run]
+type = ChangeState
+value = 100
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "FF"
+trigger1 = 1
+
+[State -1, Taunt]
+type = ChangeState
+value = 195
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "s"
+trigger1 = 1
+
+[State -1, AI falla]
+type = ChangeState
+value = 3000
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = Power >= 3000
+triggerall = P2BodyDist X < 300
+triggerall = Random < 5 + AILevel * 3
+trigger1 = 1
+
+[State -1, AI tierra]
+type = ChangeState
+value = 1000
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = Power >= 1000
+triggerall = P2BodyDist X < 170
+triggerall = Random < 4 + AILevel * 2
+trigger1 = 1
+
+[State -1, AI Jab]
+type = ChangeState
+value = 200
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = P2BodyDist X < 90
+triggerall = Random < 45 + AILevel * 10
+trigger1 = 1
+
+[State -1, AI Double]
+type = ChangeState
+value = 210
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = StateType = S
+triggerall = StateNo = 200
+triggerall = MoveHit
+triggerall = Time >= 6
+triggerall = Random < 150 + AILevel * 25
+trigger1 = 1
+
+[State -1, AI Heavy]
+type = ChangeState
+value = 240
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = P2BodyDist X < 100
+triggerall = Random < 12 + AILevel * 3
+trigger1 = 1
+
+[State -1, AI Guard]
+type = ChangeState
+value = 130
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = P2MoveType = A
+triggerall = InGuardDist
+triggerall = Random < 10 + AILevel * 4
+trigger1 = 1
+
+[State -1, AI Approach]
+type = ChangeState
+value = 2860
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = StateNo != 2860
+triggerall = P2BodyDist X > 65
+trigger1 = 1
+[Statedef -2]
+[State -2, CPU native input off]
+type = AssertSpecial
+triggerall = !IsHelper
+trigger1 = AILevel > 0
+flag = NoHardcodedKeys
+[State -2, CPU recover native walk]
+type = ChangeState
+triggerall = !IsHelper
+triggerall = AILevel > 0
+trigger1 = StateNo = 20 || StateNo = 21 || StateNo = 40 || StateNo = 10 || StateNo = 11 || StateNo = 12
+value = 0
+ctrl = 1
+[State -2, Meter9200]
+type = Explod
+triggerall = !IsHelper
+trigger1 = NumExplod(9200) = 0
+ID = 9200
+anim = 9200
+space = screen
+postype = left
+pos = ifelse(teamside = 1,30,424)+0,450
+bindtime = -1
+removetime = -1
+sprpriority = 8
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+
+
+[State -2, Meter9201]
+type = Explod
+triggerall = !IsHelper
+trigger1 = NumExplod(9201) = 0
+ID = 9201
+anim = 9201
+space = screen
+postype = left
+pos = ifelse(teamside = 1,30,424)+0,450
+bindtime = -1
+removetime = -1
+sprpriority = 9
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+
+
+[State -2, Fill9201]
+type = ModifyExplod
+triggerall = !IsHelper
+trigger1 = NumExplod(9201) > 0
+ID = 9201
+scale = max(.001,min(1,(Power-0)/1000.0)),1
+ignorehitpause = 1
+
+
+[State -2, Meter9202]
+type = Explod
+triggerall = !IsHelper
+trigger1 = NumExplod(9202) = 0
+ID = 9202
+anim = 9200
+space = screen
+postype = left
+pos = ifelse(teamside = 1,30,424)+62,450
+bindtime = -1
+removetime = -1
+sprpriority = 8
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+
+
+[State -2, Meter9203]
+type = Explod
+triggerall = !IsHelper
+trigger1 = NumExplod(9203) = 0
+ID = 9203
+anim = 9202
+space = screen
+postype = left
+pos = ifelse(teamside = 1,30,424)+62,450
+bindtime = -1
+removetime = -1
+sprpriority = 9
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+
+
+[State -2, Fill9203]
+type = ModifyExplod
+triggerall = !IsHelper
+trigger1 = NumExplod(9203) > 0
+ID = 9203
+scale = max(.001,min(1,(Power-1000)/1000.0)),1
+ignorehitpause = 1
+
+
+[State -2, Meter9204]
+type = Explod
+triggerall = !IsHelper
+trigger1 = NumExplod(9204) = 0
+ID = 9204
+anim = 9200
+space = screen
+postype = left
+pos = ifelse(teamside = 1,30,424)+124,450
+bindtime = -1
+removetime = -1
+sprpriority = 8
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+
+
+[State -2, Meter9205]
+type = Explod
+triggerall = !IsHelper
+trigger1 = NumExplod(9205) = 0
+ID = 9205
+anim = 9203
+space = screen
+postype = left
+pos = ifelse(teamside = 1,30,424)+124,450
+bindtime = -1
+removetime = -1
+sprpriority = 9
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+
+
+[State -2, Fill9205]
+type = ModifyExplod
+triggerall = !IsHelper
+trigger1 = NumExplod(9205) > 0
+ID = 9205
+scale = max(.001,min(1,(Power-2000)/1000.0)),1
+ignorehitpause = 1

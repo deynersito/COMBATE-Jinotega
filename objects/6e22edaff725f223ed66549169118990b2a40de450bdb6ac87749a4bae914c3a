@@ -1,0 +1,25 @@
+; Hector - El Father, playable prototype v0.1
+[Info]
+name = "Hector"
+displayname = "Hector - El Father"
+versiondate = 10,17,2026
+mugenversion = 1.1
+author = "Deyner Quiroz / Codex"
+pal.defaults = 1
+localcoord = 640,480
+[Files]
+cmd = hector.cmd
+cns = hector.cns
+st = hector.cns
+stcommon = common1.cns
+sprite = hector.sff
+anim = hector.air
+sound = hector.snd
+movelist = movelist.dat
+[Palette Keymap]
+x = 1
+y = 1
+z = 1
+a = 1
+b = 1
+c = 1

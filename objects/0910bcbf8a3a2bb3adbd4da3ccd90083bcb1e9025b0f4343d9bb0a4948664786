@@ -1,0 +1,38 @@
+[Characters]
+el_sielvo, order=1
+marlon, order=1
+gerald, order=1
+teno, order=1
+ruben, order=1
+levi, order=1
+maria, order=1
+arli, order=1
+isamar, order=1
+anneth, order=1
+norwin, order=1
+arleth, order=1
+jarithon, order=1
+adhara, order=1
+katuy, order=1
+wanheda, order=1
+lenn, order=1
+ector, order=1
+hector, order=1
+conejo, order=1
+el_negro, order=1
+randomselect
+[ExtraStages]
+stages/jinotega/uml.def
+stages/jinotega/esquina_roja.def
+stages/jinotega/pena_cruz.def
+stages/jinotega/parque_central.def
+stages/jinotega/avioneta.def
+stages/jinotega/la_pelota.def
+stages/jinotega/calle_la_salle.def
+stages/jinotega/catedral.def
+stages/jinotega/apanas.def
+stages/jinotega/penas_blancas.def
+stages/jinotega/la_bujona.def
+stages/jinotega/inbz.def
+[Options]
+arcade.maxmatches = 10,0,0,0,0,0,0,0,0,0

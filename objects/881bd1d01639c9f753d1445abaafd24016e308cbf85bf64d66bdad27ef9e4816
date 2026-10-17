@@ -1,0 +1,25 @@
+; El Negro, playable prototype v0.1
+[Info]
+name = "El Negro"
+displayname = "El Negro"
+versiondate = 10,17,2026
+mugenversion = 1.1
+author = "Deyner Quiroz / Codex"
+pal.defaults = 1
+localcoord = 640,480
+[Files]
+cmd = el_negro.cmd
+cns = el_negro.cns
+st = el_negro.cns
+stcommon = common1.cns
+sprite = el_negro.sff
+anim = el_negro.air
+sound = el_negro.snd
+movelist = movelist.dat
+[Palette Keymap]
+x = 1
+y = 1
+z = 1
+a = 1
+b = 1
+c = 1
