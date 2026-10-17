@@ -2,18 +2,26 @@
 
 Juego de pelea 2D para PC creado por Deyner Quiroz con IKEMEN GO, ambientado en Jinotega, Nicaragua.
 
-## Versión 1.1.3
+## Versión 1.1.4
+
+- Cuatro luchadores nuevos: **Ector “El Vaki”**, **Héctor “El Father”**, **El Conejo** y **El Negro**. El plantel sube a **21 personajes**, con los 12 escenarios anteriores.
+- Selección ampliada a cuatro filas; se conserva **Al azar**. Los cuatro tienen retratos en la torre y pueden aparecer entre sus diez rivales.
+- Ector usa sumo; Héctor conserva su Hirudora; El Conejo pelea con boxeo y contraataque.
+- El Negro incluye sonidos de golpes y bloqueo, celebración de pie, reacciones al derribo de Rubén y una onda de rocas que avanza por el suelo. C mantiene llamas animadas durante el recorrido y en la estela.
+- D consume una barra y C tres. Se conservan los modos, los niveles de dificultad y las asignaciones de controles de la versión anterior.
+
+### Mejoras de 1.1.3 que se conservan
 
 - Combos de ataques normales: **A → S → Z → X**, pulsando cada botón al conectar el golpe anterior. También hay cadenas cortas A → S → X y A → Z → X. El margen de entrada se amplía a seis cuadros, se reduce el retroceso de los golpes intermedios y cada impacto sucesivo reduce su daño. No hay cancelación en bucle.
 - Levi, Isamar y Norwin conservan su movimiento evasivo con X: pueden hacer **A → S → Z** y salir con X.
 - Los enlaces requieren acertar: un golpe fallado o bloqueado no habilita la cancelación al siguiente ataque.
 - **Un control de consola + teclado:** en Jugador vs Jugador y 2vs2 Relevos, si se detecta exactamente un mando, **P1 usa el control** y **P2 usa flechas + A/S/Z/X/D/C**. La selección muestra la asignación. Conectá el control antes de elegir modo. Al volver al menú se restauran las asignaciones personales; la configuración guardada no se sobrescribe.
-- Se conservan las dificultades Fácil, Medio y Difícil, el movimiento de CPU corregido, los 17 luchadores, los 12 escenarios, la selección Al azar y la torre de diez rivales.
+- Se conservan las dificultades Fácil, Medio y Difícil, el movimiento de CPU corregido, los 21 luchadores, los 12 escenarios, la selección Al azar y la torre de diez rivales.
 - D requiere y consume una barra (1000); C requiere y consume tres barras (3000).
 
 ## Cómo actualizar
 
-Cerrá el juego, abrí **COMBATE.exe → Buscar actualizaciones**, instalá **1.1.3** y elegí **Jugar**. Necesitás la instalación completa y el canal de actualizaciones configurado. Se puede actualizar directamente desde versiones anteriores.
+Cerrá el juego, abrí **COMBATE.exe → Buscar actualizaciones**, instalá **1.1.4** y elegí **Jugar**. Necesitás la instalación completa y el canal de actualizaciones configurado. Se puede actualizar directamente desde versiones anteriores.
 
 El lanzador comprueba la firma del manifiesto y los hashes de los archivos, respalda el contenido sustituido y conserva save/config.ini, incluyendo controles y audio.
 
@@ -28,6 +36,9 @@ El lanzador comprueba la firma del manifiesto y los hashes de los archivos, resp
 Para cubrirse, mantené la dirección contraria al rival. Escape abre la pausa. Q/W permiten las acciones de relevo cuando corresponda en el modo mixto. Podés personalizar los controles habituales desde Configuración. El archivo data/combate/COMBOS.txt incluye las indicaciones de esta versión.
 
 ## Validación
+
+1.1.4: los cuatro personajes se probaron en IKEMEN GO para Linux. Se comprobaron registro y retratos de selección/torre, energía y daño de los especiales de El Negro, recuperación tras el derribo y celebración de pie. El manifiesto firmado conserva las actualizaciones anteriores y no incluye configuraciones de usuario.
+
 
 Pruebas del motor en Linux: combos de los 17 personajes con daño total esperado, cuatro golpes confirmados de El Sielvo (220), corte al fallar o bloquear, separación real del teclado de P1/P2 y retorno al menú. Se simularon cero, uno y dos mandos, incluyendo un mando con índice distinto de cero. Se verificó que las asignaciones guardadas no cambian.
 
