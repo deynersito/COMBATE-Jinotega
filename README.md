@@ -2,32 +2,39 @@
 
 Juego de pelea 2D para PC creado por Deyner Quiroz con IKEMEN GO, ambientado en Jinotega, Nicaragua.
 
-## Versión 1.1.2
+## Versión 1.1.3
 
-- Dificultad **Fácil, Medio y Difícil**, elegible en **Configuración → Dificultad** con izquierda/derecha. Elegí **Guardar y volver** para conservarla. También se respeta en la torre.
-- Corregido el movimiento de la CPU: avance controlado por la IA, sin saltos automáticos de retroceso ni bloqueo de la caminata. Se mantiene cerca para intercambiar golpes y solo retrocede brevemente tras un intercambio en la esquina.
-- La CPU regula pausas, defensa y combinaciones según la dificultad. Busca espacio para volver al centro y salir de las esquinas; el jugador conserva libertad de movimiento. La vida y el daño no aumentan con la dificultad.
-- 17 luchadores, incluyendo Elian «Wanheda» y Lenn «El Tripas».
-- 12 escenarios de Jinotega, incluyendo Avioneta, La Pelota, Calle La Salle, La Catedral, Lago de Apanás, Peñas Blancas, Cascada La Bujona e I.N.B.Z.
-- Selección **Al azar**, torre de 10 rivales distintos, jugador contra CPU, jugador contra jugador y relevos 2vs2 con dos personajes por lado.
-- Tres segmentos de energía: D requiere y consume 1000 (una barra); C requiere y consume 3000 (tres barras).
+- Combos de ataques normales: **A → S → Z → X**, pulsando cada botón al conectar el golpe anterior. También hay cadenas cortas A → S → X y A → Z → X. El margen de entrada se amplía a seis cuadros, se reduce el retroceso de los golpes intermedios y cada impacto sucesivo reduce su daño. No hay cancelación en bucle.
+- Levi, Isamar y Norwin conservan su movimiento evasivo con X: pueden hacer **A → S → Z** y salir con X.
+- Los enlaces requieren acertar: un golpe fallado o bloqueado no habilita la cancelación al siguiente ataque.
+- **Un control de consola + teclado:** en Jugador vs Jugador y 2vs2 Relevos, si se detecta exactamente un mando, **P1 usa el control** y **P2 usa flechas + A/S/Z/X/D/C**. La selección muestra la asignación. Conectá el control antes de elegir modo. Al volver al menú se restauran las asignaciones personales; la configuración guardada no se sobrescribe.
+- Se conservan las dificultades Fácil, Medio y Difícil, el movimiento de CPU corregido, los 17 luchadores, los 12 escenarios, la selección Al azar y la torre de diez rivales.
+- D requiere y consume una barra (1000); C requiere y consume tres barras (3000).
 
 ## Cómo actualizar
 
-Cerrá el juego, abrí **COMBATE.exe** y elegí **Buscar actualizaciones**. Aceptá la versión **1.1.2** y, al terminar, elegí **Jugar**. Necesitás la instalación completa y el canal de actualizaciones configurado. Se puede actualizar directamente desde versiones anteriores.
+Cerrá el juego, abrí **COMBATE.exe → Buscar actualizaciones**, instalá **1.1.3** y elegí **Jugar**. Necesitás la instalación completa y el canal de actualizaciones configurado. Se puede actualizar directamente desde versiones anteriores.
 
-El manifiesto latest.json está firmado. El lanzador comprueba firma y hashes, respalda los archivos que sustituye y conserva save/config.ini, incluyendo controles y audio.
+El lanzador comprueba la firma del manifiesto y los hashes de los archivos, respalda el contenido sustituido y conserva save/config.ini, incluyendo controles y audio.
 
-## Controles de fábrica
+## Controles
 
-P1: flechas; A/S ataques principales; Z/X ataques secundarios; D especial de una barra; C súper de tres barras; Enter provocación; Escape pausa. Para cubrirse, mantené la dirección contraria al rival. P2: I/J/K/L, R/T, F/G, Y/H y Shift derecho. Se pueden personalizar desde Configuración.
+| Situación | P1 | P2 |
+| --- | --- | --- |
+| Un mando en modo versus/relevos | Control de consola, con tus botones configurados | Flechas; A/S/Z/X ataques; D especial; C súper; Enter provocación |
+| Sin mandos | Teclado configurado: de fábrica flechas + A/S/Z/X/D/C | Teclado configurado: de fábrica I/J/K/L + R/T/F/G/Y/H |
+| Dos mandos | Primer control configurado | Segundo control configurado |
 
-## Plataformas
-
-Disponible actualmente para PC Windows. Android e iOS están en evaluación; todavía no hay versiones móviles publicadas ni fecha de lanzamiento.
+Para cubrirse, mantené la dirección contraria al rival. Escape abre la pausa. Q/W permiten las acciones de relevo cuando corresponda en el modo mixto. Podés personalizar los controles habituales desde Configuración. El archivo data/combate/COMBOS.txt incluye las indicaciones de esta versión.
 
 ## Validación
 
-Pruebas del motor en Linux: carga de los 17 personajes, selección y persistencia de dificultad, movimiento de CPU e instalación firmada con conservación de configuración. Se conservan las animaciones y reglas de energía anteriores. La interfaz Windows y los mandos físicos no se ejecutaron en ese entorno.
+Pruebas del motor en Linux: combos de los 17 personajes con daño total esperado, cuatro golpes confirmados de El Sielvo (220), corte al fallar o bloquear, separación real del teclado de P1/P2 y retorno al menú. Se simularon cero, uno y dos mandos, incluyendo un mando con índice distinto de cero. Se verificó que las asignaciones guardadas no cambian.
+
+Los mandos físicos y la interfaz Windows no se ejecutaron en ese entorno.
+
+## Plataformas
+
+Disponible para PC Windows. Android e iOS están en evaluación, sin versiones móviles publicadas ni fecha de lanzamiento.
 
 Este repositorio distribuye actualizaciones de contenido; no contiene claves privadas ni una copia completa del motor.
