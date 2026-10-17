@@ -1,0 +1,23 @@
+COMBATE JINOTEGA 1.1.3
+
+COMBOS
+Acercate y pulsa A, luego S, luego Z y finalmente X, al ver conectar cada golpe.
+No mantengas todos los botones a la vez: son golpes consecutivos.
+Tambien podes usar A-S-X o A-Z-X para una cadena mas corta.
+Los ataques enlazan al acertar; si fallas o el rival bloquea, la cadena se corta.
+Cada impacto consecutivo hace un poco menos de dano para mantener el balance.
+Levi, Isamar y Norwin conservan su paso evasivo con X: A-S-Z y X para salir.
+Con control se usan los botones equivalentes a esos cuatro ataques.
+D sigue costando una barra y C las tres barras; sus habilidades se conservan.
+
+UN CONTROL + TECLADO
+Conecta el control antes de elegir Jugador vs Jugador o 2vs2 Relevos.
+Si el juego detecta exactamente un control:
+  P1: control de consola, con tu configuracion de botones.
+  P2: teclado, flechas para moverse y saltar, A/S ataques, Z/X ataques,
+      D especial, C super, Enter provocacion. Q/W relevos cuando corresponda.
+Para cubrirte, mantene la direccion contraria al rival.
+La pantalla de seleccion indica P1: CONTROL / P2: TECLADO.
+Al volver al menu se restauran tus asignaciones guardadas.
+Con cero o dos controles se conserva tu configuracion habitual.
+Los cambios temporales no sobrescriben tus teclas, audio ni preferencias.

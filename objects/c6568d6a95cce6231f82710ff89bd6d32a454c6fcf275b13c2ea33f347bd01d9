@@ -1,0 +1,62 @@
+-- COMBATE: runtime-only mixed controller/keyboard routing. Never writes saved mappings.
+local M = {active = false}
+local fields = {'up','down','left','right','a','b','c','x','y','z','start','d','w','menu'}
+local keyboard = {'UP','DOWN','LEFT','RIGHT','z','x','c','a','s','d','RETURN','q','w','Not used'}
+local empty = {}
+for i=1,#fields do empty[i] = 'Not used' end
+local originalSet = options.f_setKeyConfig
+local function buttons(c)
+ local out = {}
+ for i,key in ipairs(fields) do out[i] = c[key] end
+ return out
+end
+function M.reset()
+ if not M.active then return end
+ M.active = false
+ originalSet('Keys')
+ originalSet('Joystick')
+ print('[COMBATE_INPUT] configuracion personal restaurada')
+end
+function M.apply()
+ M.reset()
+ local pads = {}
+ for j=0,15 do if getJoystickPresent(j) then pads[#pads+1] = j end end
+ if #pads ~= 1 then return false end
+ local pad = pads[1]
+ local c = gameOption('Joystick_P1')
+ setKeyConfig(1,-1,empty)
+ setKeyConfig(1,pad,buttons(c))
+ setKeyConfig(2,-1,keyboard)
+ -- Explicitly isolate P2 from the one physical controller, even when the index changed.
+ setKeyConfig(2,pad,empty)
+ M.active = true
+ print('[COMBATE_INPUT] un control: P1=mando '..pad..'; P2=flechas ASZXDC')
+ return true
+end
+-- Configuring controls from pause must not accidentally restore shared inputs mid-match.
+options.f_setKeyConfig = function(kind)
+ local active = M.active
+ originalSet(kind)
+ if active then M.apply() end
+end
+for _,key in ipairs({'versus','teamversus'}) do
+ local previous = main.t_itemname[key]
+ main.t_itemname[key] = function(...)
+  local result = previous(...)
+  if M.apply() then
+   local label = key == 'teamversus' and '2 VS 2' or '1 VS 1'
+   textImgSetText(motif.select_info.title.TextSpriteData,label..' | P1: CONTROL | P2: TECLADO')
+  end
+  return result
+ end
+end
+if start and start.f_selectMode then
+ local originalSelect = start.f_selectMode
+ start.f_selectMode = function(...)
+  local result = originalSelect(...)
+  M.reset()
+  return result
+ end
+end
+hook.add('main.menu.loop','combate_restore_inputs',function() M.reset() end)
+return M

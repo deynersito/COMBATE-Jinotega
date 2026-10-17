@@ -1,0 +1,442 @@
+[Remap]
+x=x
+y=y
+z=z
+a=a
+b=b
+c=c
+s=s
+[Defaults]
+command.time = 18
+command.buffer.time = 3
+
+[Command]
+name = "judograb"
+command = ~D, DF, F, x
+time = 18
+buffer.time = 3
+
+[Command]
+name = "superjudo"
+command = ~D, DF, F, y
+time = 18
+buffer.time = 3
+
+[Command]
+name = "FF"
+command = F, F
+time = 18
+buffer.time = 3
+
+[Command]
+name = "BB"
+command = B, B
+time = 18
+buffer.time = 3
+
+[Command]
+name = "x"
+command = x
+time = 18
+buffer.time = 6
+
+[Command]
+name = "y"
+command = y
+time = 18
+buffer.time = 6
+
+[Command]
+name = "z"
+command = z
+time = 18
+buffer.time = 3
+
+[Command]
+name = "a"
+command = a
+time = 18
+buffer.time = 6
+
+[Command]
+name = "b"
+command = b
+time = 18
+buffer.time = 6
+
+[Command]
+name = "c"
+command = c
+time = 18
+buffer.time = 3
+
+[Command]
+name = "s"
+command = s
+time = 18
+buffer.time = 3
+
+[Command]
+name = "holdfwd"
+command = /$F
+time = 18
+buffer.time = 1
+
+[Command]
+name = "holdback"
+command = /$B
+time = 18
+buffer.time = 1
+
+[Command]
+name = "holdup"
+command = /$U
+time = 18
+buffer.time = 1
+
+[Command]
+name = "holddown"
+command = /$D
+time = 18
+buffer.time = 1
+
+[Statedef -1]
+
+[State -1, SuperJudo]
+type = ChangeState
+triggerall = Power >= 3000
+value = 3000
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "superjudo" || command = "c"
+trigger1 = 1
+
+[State -1, Judo]
+type = ChangeState
+triggerall = Power >= 1000
+value = 1000
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "judograb" || command = "z"
+trigger1 = 1
+
+[State -1, Run]
+type = ChangeState
+value = 100
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "FF"
+trigger1 = 1
+
+[State -1, BackHop]
+type = ChangeState
+value = 105
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "BB"
+trigger1 = 1
+
+[State -1, Taunt]
+type = ChangeState
+value = 195
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "s"
+trigger1 = 1
+
+[State -1, Attack600x]
+type = ChangeState
+value = 600
+triggerall = AILevel = 0
+triggerall = StateType = A
+triggerall = Ctrl
+triggerall = command = "x"
+trigger1 = 1
+
+[State -1, Attack630a]
+type = ChangeState
+value = 630
+triggerall = AILevel = 0
+triggerall = StateType = A
+triggerall = Ctrl
+triggerall = command = "a"
+trigger1 = 1
+
+[State -1, Attack400x]
+type = ChangeState
+value = 400
+triggerall = AILevel = 0
+triggerall = StateType = C
+triggerall = Ctrl
+triggerall = command = "x"
+trigger1 = 1
+
+[State -1, Attack400y]
+type = ChangeState
+value = 400
+triggerall = AILevel = 0
+triggerall = StateType = C
+triggerall = Ctrl
+triggerall = command = "y"
+trigger1 = 1
+
+[State -1, Attack430a]
+type = ChangeState
+value = 430
+triggerall = AILevel = 0
+triggerall = StateType = C
+triggerall = Ctrl
+triggerall = command = "a"
+trigger1 = 1
+
+[State -1, Attack430b]
+type = ChangeState
+value = 430
+triggerall = AILevel = 0
+triggerall = StateType = C
+triggerall = Ctrl
+triggerall = command = "b"
+trigger1 = 1
+
+[State -1, Attack200]
+type = ChangeState
+value = 200
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl
+triggerall = command = "x"
+trigger1 = 1
+
+[State -1, Attack210]
+type = ChangeState
+ignorehitpause = 1
+value = 210
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl || (StateNo = 200 && MoveHit && Time >= 3 && Time <= 13)
+triggerall = command = "y"
+trigger1 = 1
+
+[State -1, Attack230]
+type = ChangeState
+ignorehitpause = 1
+value = 230
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl || (StateNo = 200 && MoveHit && Time >= 3 && Time <= 13) || (StateNo = 210 && MoveHit && Time >= 5 && Time <= 15)
+triggerall = command = "a"
+trigger1 = 1
+
+[State -1, Attack240]
+type = ChangeState
+ignorehitpause = 1
+value = 240
+triggerall = AILevel = 0
+triggerall = StateType = S
+triggerall = Ctrl || (StateNo = 210 && MoveHit && Time >= 5 && Time <= 15) || (StateNo = 230 && MoveHit && Time >= 5 && Time <= 15)
+triggerall = command = "b"
+trigger1 = 1
+
+
+
+[State -1, AI ConfirmedChain210]
+type = ChangeState
+triggerall = AILevel > 0 && RoundState = 2
+triggerall = StateNo = 210 && MoveHit
+triggerall = Time >= 5 && Time <= 15
+trigger1 = Random < IfElse(AILevel <= 2,20,IfElse(AILevel <= 5,95,210))
+value = 230
+
+[State -1, AI ConfirmedChain230]
+type = ChangeState
+triggerall = AILevel > 0 && RoundState = 2
+triggerall = StateNo = 230 && MoveHit
+triggerall = Time >= 5 && Time <= 15
+trigger1 = Random < IfElse(AILevel <= 2,20,IfElse(AILevel <= 5,95,210))
+value = 240
+
+[State -1, AI ExitOwnCorner]
+type = ChangeState
+triggerall = AILevel > 0 && RoundState = 2 && Ctrl && StateType = S
+triggerall = Var(56) <= 0
+triggerall = BackEdgeBodyDist < 85
+trigger1 = P2BodyDist X > 120
+value = 2853
+
+[State -1, AI CenterExchange]
+type = ChangeState
+triggerall = AILevel > 0 && RoundState = 2 && Ctrl && StateType = S
+triggerall = Var(56) <= 0
+triggerall = Pos X * Facing > 150
+triggerall = Var(55) >= 2
+triggerall = P2BodyDist X < 150 && P2BodyDist X > 0
+trigger1 = (EnemyNear, BackEdgeBodyDist) < 80
+value = 2850
+
+[State -1, AI AirPunch]
+type = ChangeState
+triggerall = AILevel >= 5 && RoundState = 2 && Ctrl && StateType = A
+triggerall = P2BodyDist X < 105 && Abs(P2Dist Y) < 100
+trigger1 = Random < IfElse(AILevel <= 5, 65, 150)
+value = 600
+[State -1, AI Guard]
+type = ChangeState
+value = 130
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = P2MoveType = A
+triggerall = P2BodyDist X < 200
+triggerall = Random < IfElse(AILevel <= 2,25,IfElse(AILevel <= 5,150,350))
+trigger1 = 1
+
+
+[State -1, AI SuperJudo]
+type = ChangeState
+triggerall = Var(59) <= 0
+triggerall = Power >= 3000
+value = 3000
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = P2BodyDist X < 50
+triggerall = P2StateType != A
+triggerall = P2MoveType != A
+triggerall = Random < IfElse(AILevel <= 2,6,IfElse(AILevel <= 5,22,50))
+trigger1 = 1
+
+[State -1, AI Judo]
+type = ChangeState
+triggerall = Var(59) <= 0
+triggerall = Power >= 1000
+value = 1000
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = P2BodyDist X < 50
+triggerall = P2StateType != A
+triggerall = P2MoveType != A
+triggerall = Random < IfElse(AILevel <= 2,30,IfElse(AILevel <= 5,90,170))
+trigger1 = 1
+
+[State -1, AI Uppercut]
+type = ChangeState
+triggerall = Var(59) <= 0
+value = 240
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = P2BodyDist X < 120
+triggerall = Random < IfElse(AILevel <= 2,30,IfElse(AILevel <= 5,90,170))
+trigger1 = 1
+
+[State -1, AI Jab]
+type = ChangeState
+triggerall = Var(59) <= 0
+value = 200
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = P2BodyDist X < 95
+triggerall = Random < IfElse(AILevel <= 2,45,IfElse(AILevel <= 5,135,290))
+trigger1 = 1
+
+[State -1, AI Cross]
+type = ChangeState
+value = 210
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = StateType = S
+triggerall = StateNo = 200
+triggerall = MoveContact
+triggerall = Time > 5
+triggerall = Random < IfElse(AILevel <= 2,60,IfElse(AILevel <= 5,260,600))
+trigger1 = 1
+
+[State -1, AI Approach]
+type = ChangeState
+value = 2860
+triggerall = AILevel > 0
+triggerall = RoundState = 2
+triggerall = Ctrl
+triggerall = StateType = S
+triggerall = StateNo != 2860
+triggerall = P2BodyDist X > 25
+triggerall = Random < IfElse(AILevel <= 2,125,IfElse(AILevel <= 5,220,400))
+trigger1 = 1
+
+[Statedef -2]
+[State -2, AI OwnMovement]
+type = AssertSpecial
+trigger1 = AILevel > 0
+flag = NoHardcodedKeys
+ignorehitpause = 1
+
+[State -2, AI SustainGuard]
+type = AssertInput
+triggerall = AILevel > 0
+trigger1 = StateNo >= 120 && StateNo <= 155 && P2MoveType = A && InGuardDist
+flag = B
+ignorehitpause = 1
+
+
+[State -2, AI Stop]
+type = ChangeState
+triggerall = AILevel > 0
+triggerall = StateNo = 20
+trigger1 = P2BodyDist X <= 25
+value = 0
+ctrl = 1
+
+
+[State -2, AI ThinkClock]
+type = VarAdd
+triggerall = AILevel > 0
+trigger1 = Var(59) > 0
+v = 59
+value = -1
+[State -2, AI RecoveryPause]
+type = VarSet
+triggerall = AILevel > 0
+trigger1 = MoveType = A && Time = 0
+v = 59
+value = IfElse(AILevel <= 2, 28, IfElse(AILevel <= 5, 12, 3))
+[State -2, AI RepositionCooldown]
+type = VarAdd
+triggerall = AILevel > 0
+trigger1 = Var(56) > 0
+v = 56
+value = -1
+[State -2, AI CountExchange]
+type = VarAdd
+triggerall = AILevel > 0 && StateNo >= 200 && StateNo < 700
+trigger1 = MoveHit = 1
+v = 55
+value = 1
+[State -2, AI ResetRound]
+type = VarSet
+trigger1 = RoundState != 2
+v = 55
+value = 0
+
+[State -2, AI CancelRandomMovement]
+type = ChangeState
+triggerall = AILevel > 0 && RoundState = 2
+trigger1 = StateNo = 20
+trigger2 = StateNo = 21
+trigger3 = StateNo = 40
+trigger4 = StateNo = 10
+trigger5 = StateNo = 11
+trigger6 = StateNo = 12
+value = 0
+ctrl = 1
