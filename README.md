@@ -2,7 +2,12 @@
 
 Juego de pelea 2D para PC creado por Deyner Quiroz con IKEMEN GO, ambientado en Jinotega, Nicaragua.
 
-## Versión 1.1.4
+## Versión 1.1.5
+
+- Corrige el error **«tipo de archivo no permitido»** al buscar actualizaciones. Las listas de movimientos de Ector, Héctor, El Conejo y El Negro se distribuyen como `.txt`, y sus definiciones apuntan al nombre correcto.
+- Conserva los 21 luchadores, los 12 escenarios y todas las mejoras de 1.1.4. Se instala desde el mismo **COMBATE.exe**, sin reemplazar el lanzador.
+
+### Contenido de 1.1.4 que se conserva
 
 - Cuatro luchadores nuevos: **Ector “El Vaki”**, **Héctor “El Father”**, **El Conejo** y **El Negro**. El plantel sube a **21 personajes**, con los 12 escenarios anteriores.
 - Selección ampliada a cuatro filas; se conserva **Al azar**. Los cuatro tienen retratos en la torre y pueden aparecer entre sus diez rivales.
@@ -21,7 +26,7 @@ Juego de pelea 2D para PC creado por Deyner Quiroz con IKEMEN GO, ambientado en 
 
 ## Cómo actualizar
 
-Cerrá el juego, abrí **COMBATE.exe → Buscar actualizaciones**, instalá **1.1.4** y elegí **Jugar**. Necesitás la instalación completa y el canal de actualizaciones configurado. Se puede actualizar directamente desde versiones anteriores.
+Cerrá el juego, abrí **COMBATE.exe → Buscar actualizaciones**, instalá **1.1.5** y elegí **Jugar**. Necesitás la instalación completa y el canal de actualizaciones configurado. Se puede actualizar directamente desde versiones anteriores.
 
 El lanzador comprueba la firma del manifiesto y los hashes de los archivos, respalda el contenido sustituido y conserva save/config.ini, incluyendo controles y audio.
 
@@ -36,6 +41,9 @@ El lanzador comprueba la firma del manifiesto y los hashes de los archivos, resp
 Para cubrirse, mantené la dirección contraria al rival. Escape abre la pausa. Q/W permiten las acciones de relevo cuando corresponda en el modo mixto. Podés personalizar los controles habituales desde Configuración. El archivo data/combate/COMBOS.txt incluye las indicaciones de esta versión.
 
 ## Validación
+
+1.1.5: se reprodujo el fallo de 1.1.4 con el código del actualizador. La versión corregida se valida con el mismo decodificador de firmas y rutas, instalación completa, actualización desde una instalación previa, repetición de la actualización y conservación de controles/audio. Se verifican tamaño y SHA256 de los 97 archivos. Estas pruebas ejecutan el núcleo del actualizador en Linux; la interfaz de Windows no se ejecutó aquí.
+
 
 1.1.4: los cuatro personajes se probaron en IKEMEN GO para Linux. Se comprobaron registro y retratos de selección/torre, energía y daño de los especiales de El Negro, recuperación tras el derribo y celebración de pie. El manifiesto firmado conserva las actualizaciones anteriores y no incluye configuraciones de usuario.
 

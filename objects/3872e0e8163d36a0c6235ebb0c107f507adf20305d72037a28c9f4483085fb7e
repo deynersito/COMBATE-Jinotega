@@ -1,0 +1,25 @@
+; Ector - El Vaki, playable prototype v0.1
+[Info]
+name = "Ector"
+displayname = "Ector - El Vaki"
+versiondate = 10,15,2026
+mugenversion = 1.1
+author = "Deyner Quiroz / Codex"
+pal.defaults = 1
+localcoord = 640,480
+[Files]
+cmd = ector.cmd
+cns = ector.cns
+st = ector.cns
+stcommon = common1.cns
+sprite = ector.sff
+anim = ector.air
+sound = ector.snd
+movelist = movelist.txt
+[Palette Keymap]
+x = 1
+y = 1
+z = 1
+a = 1
+b = 1
+c = 1

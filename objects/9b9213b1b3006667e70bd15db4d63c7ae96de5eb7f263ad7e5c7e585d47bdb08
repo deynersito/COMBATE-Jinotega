@@ -1,0 +1,25 @@
+; El Conejo, playable prototype v0.1
+[Info]
+name = "El Conejo"
+displayname = "El Conejo"
+versiondate = 10,17,2026
+mugenversion = 1.1
+author = "Deyner Quiroz / Codex"
+pal.defaults = 1
+localcoord = 640,480
+[Files]
+cmd = conejo.cmd
+cns = conejo.cns
+st = conejo.cns
+stcommon = common1.cns
+sprite = conejo.sff
+anim = conejo.air
+sound = conejo.snd
+movelist = movelist.txt
+[Palette Keymap]
+x = 1
+y = 1
+z = 1
+a = 1
+b = 1
+c = 1
