@@ -1,0 +1,61 @@
+[Info]
+name = "La Turbina"
+displayname = "La Turbina"
+author = "Deyner - Proyecto Combate"
+mugenversion = 1.1
+[Camera]
+startx = 0
+starty = 0
+boundleft = 0
+boundright = 0
+boundhigh = 0
+boundlow = 0
+verticalfollow = 0
+floortension = 0
+tension = 100
+cuthigh = 0
+cutlow = 0
+zoomstart = .75
+zoomin = .75
+zoomout = .75
+[PlayerInfo]
+p1startx = -280
+p1starty = 0
+p1facing = 1
+p2startx = 280
+p2starty = 0
+p2facing = -1
+leftbound = -1000
+rightbound = 1000
+[Bound]
+screenleft = 20
+screenright = 20
+[StageInfo]
+zoffset = 621
+autoturn = 1
+resetBG = 1
+localcoord = 1280,720
+xscale = 1
+yscale = 1
+[Shadow]
+intensity = 96
+color = 0,0,0
+yscale = .22
+fade.range = -300,-30
+[Reflection]
+intensity = 0
+[Music]
+bgmusic =
+[BGdef]
+spr = la_turbina.sff
+debugbg = 0
+[Begin Action 9000]
+9000,1,0,0,-1
+[BG Fondo]
+type = normal
+spriteno = 0,0
+start = 0,0
+delta = 0,0
+zoomdelta = 0
+layerno = 0
+mask = 0

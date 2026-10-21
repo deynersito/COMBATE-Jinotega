@@ -1,0 +1,25 @@
+; El Poli, playable prototype v0.1
+[Info]
+name = "El Poli"
+displayname = "El Poli"
+versiondate = 10,17,2026
+mugenversion = 1.1
+author = "Deyner Quiroz / Codex"
+pal.defaults = 1
+localcoord = 640,480
+[Files]
+cmd = el_poli.cmd
+cns = el_poli.cns
+st = el_poli.cns
+stcommon = common1.cns
+sprite = el_poli.sff
+anim = el_poli.air
+sound = el_poli.snd
+movelist = movelist.txt
+[Palette Keymap]
+x = 1
+y = 1
+z = 1
+a = 1
+b = 1
+c = 1

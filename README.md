@@ -2,7 +2,13 @@
 
 Juego de pelea 2D para PC creado por Deyner Quiroz con IKEMEN GO, ambientado en Jinotega, Nicaragua.
 
-## Versión 1.1.5
+## Versión 1.1.6
+
+- Agrega **El Poli**: ataques con amansa bolos, multas voladoras y frase de victoria **«Son 500»**. Disponible en selección, versus y Torre Arcade, con sus retratos.
+- Agrega los escenarios **El Mural** y **La Turbina**. El plantel cuenta con **22 personajes y 14 escenarios**.
+- Conserva todo el contenido de 1.1.5, incluido el arreglo del actualizador y los ajustes personales de controles y audio.
+
+### Correcciones de 1.1.5 que se conservan
 
 - Corrige el error **«tipo de archivo no permitido»** al buscar actualizaciones. Las listas de movimientos de Ector, Héctor, El Conejo y El Negro se distribuyen como `.txt`, y sus definiciones apuntan al nombre correcto.
 - Conserva los 21 luchadores, los 12 escenarios y todas las mejoras de 1.1.4. Se instala desde el mismo **COMBATE.exe**, sin reemplazar el lanzador.
@@ -26,7 +32,7 @@ Juego de pelea 2D para PC creado por Deyner Quiroz con IKEMEN GO, ambientado en 
 
 ## Cómo actualizar
 
-Cerrá el juego, abrí **COMBATE.exe → Buscar actualizaciones**, instalá **1.1.5** y elegí **Jugar**. Necesitás la instalación completa y el canal de actualizaciones configurado. Se puede actualizar directamente desde versiones anteriores.
+Cerrá el juego, abrí **COMBATE.exe → Buscar actualizaciones**, instalá **1.1.6** y elegí **Jugar**. Necesitás la instalación completa y el canal de actualizaciones configurado. Se puede actualizar directamente desde versiones anteriores.
 
 El lanzador comprueba la firma del manifiesto y los hashes de los archivos, respalda el contenido sustituido y conserva save/config.ini, incluyendo controles y audio.
 
@@ -41,6 +47,8 @@ El lanzador comprueba la firma del manifiesto y los hashes de los archivos, resp
 Para cubrirse, mantené la dirección contraria al rival. Escape abre la pausa. Q/W permiten las acciones de relevo cuando corresponda en el modo mixto. Podés personalizar los controles habituales desde Configuración. El archivo data/combate/COMBOS.txt incluye las indicaciones de esta versión.
 
 ## Validación
+
+1.1.6: se verificaron firma, rutas, tamaños y SHA256 de los 108 archivos; se conservaron las 97 rutas previas (94 archivos idénticos y tres archivos de integración actualizados). Pasaron las pruebas del núcleo del actualizador: instalación, actualización, repetición, recuperación tras interrupción y conservación de controles/audio. Se decodificaron los sprites de ambos escenarios y El Poli, y se verificaron los 22 luchadores, 14 escenarios y todos los retratos anteriores de la torre. Las pruebas de combate recuperadas de El Poli registran daño, bloqueo, energía, proyectiles y derribo; no se repitieron en el motor en esta reconstrucción. La Turbina se reconstruyó desde la imagen adjunta y requiere una prueba visual en el juego Windows.
 
 1.1.5: se reprodujo el fallo de 1.1.4 con el código del actualizador. La versión corregida se valida con el mismo decodificador de firmas y rutas, instalación completa, actualización desde una instalación previa, repetición de la actualización y conservación de controles/audio. Se verifican tamaño y SHA256 de los 97 archivos. Estas pruebas ejecutan el núcleo del actualizador en Linux; la interfaz de Windows no se ejecutó aquí.
 
